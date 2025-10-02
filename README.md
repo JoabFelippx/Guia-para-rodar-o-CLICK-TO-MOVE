@@ -64,7 +64,7 @@ Esta etapa é executada na sua própria máquina (não no robô) e requer três 
 
 1.  **Clone o repositório (se ainda não o tiver):**
     ```bash
-    git clone [https://github.com/labvisio/navigation2.git](https://github.com/labvisio/navigation2.git)
+    git clone https://github.com/labvisio/navigation2.git
     cd navigation2
     ```
 2.  **Verifique o usuário:** No arquivo `nav2-rviz2-container.sh`, garanta que a variável `USER` está configurada com o nome de usuário da sua máquina.

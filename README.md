@@ -166,7 +166,7 @@ Este passo **deve ser executado na máquina `10.10.2.92`**.
 
 ---
 
-### **Passo 6: Rodar o Cliente Click-to-Go (Máquina de Brasília)**
+### **Passo 6: Rodar o Cliente Click-to-Move (Máquina de Brasília)**
 
 Este é o passo final, onde você executa a interface que captura os cliques para mover o robô.
 #### **Terminal 7:

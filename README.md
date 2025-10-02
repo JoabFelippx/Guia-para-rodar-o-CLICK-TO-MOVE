@@ -82,7 +82,8 @@ Esta etapa é executada na sua própria máquina (não no robô) e requer três 
     source /opt/ros/humble/setup.bash
 
     # Lançar a localização com o mapa do laboratório
-    ros2 launch nav2_bringup localization_launch.py map:=/opt/ros/humble/share/nav2_bringup/maps/mapa_labsea.yaml
+    cd /opt/ros/humble/share/nav2_bringup/maps/
+    ros2 launch nav2_bringup localization_launch.py map:=mapa_labsea.yaml
     ```
 
 #### **Terminal 3: Re-inicialização e RViz**

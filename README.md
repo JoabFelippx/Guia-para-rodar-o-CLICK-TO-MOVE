@@ -14,7 +14,7 @@ Para facilitar o acesso durante a apresentação, foi criado um usuário no labo
 
 Escolha o robô que será utilizado e conecte-se a ele a partir do seu terminal.
 
-# Verifique a tensão da bateria do robô. A faixa de operação ideal é entre 38V e 42V. Se a tensão estiver abaixo de 38V, conecte o robô ao carregador.
+# Verifique a tensão da bateria do robô. A faixa de operação ideal é entre 38V e 42V. Se a tensão estiver abaixo de 38V, conecte o robô ao carregador e carregue.
 #### **RobIS D2**
 * **IP:** `10.10.1.189`
 * **Login:** `jetson`

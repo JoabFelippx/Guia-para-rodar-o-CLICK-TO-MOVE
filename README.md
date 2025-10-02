@@ -124,7 +124,7 @@ Esta etapa é executada na sua própria máquina (não no robô) e requer três 
 ### **Passo 4: Inicializar o Gateway IS-ROS2 (Na sua Máquina Local)**
 
 Em um novo terminal na sua máquina, inicie o gateway que faz a ponte de comunicação.
-Terminal 5:
+#### **Terminal 5:
 1.  **Subir o container do gateway:**
     ```bash
     sudo docker run --rm -it --network=host matheusdutra0207/is-ros2-gateway:0.0.1 bash
@@ -141,9 +141,9 @@ Terminal 5:
 ---
 
 ### **Passo 5: Ativar o Node Dynamic Follower (Máquina Específica)**
-Terminal 6:
-Este passo **deve ser executado na máquina `10.10.2.92`**.
 
+Este passo **deve ser executado na máquina `10.10.2.92`**.
+#### **Terminal 6:
 1.  **Conecte-se à máquina via SSH:**
     * **Usuário:** `ros`
     * **Senha:** `ros123456`
@@ -169,7 +169,7 @@ Este passo **deve ser executado na máquina `10.10.2.92`**.
 ### **Passo 6: Rodar o Cliente Click-to-Go (Máquina de Brasília)**
 
 Este é o passo final, onde você executa a interface que captura os cliques para mover o robô.
-Terminal 7:
+#### **Terminal 7:
 1.  **Navegue até o diretório do projeto:**
     ```bash
     cd click-to-move

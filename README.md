@@ -38,7 +38,7 @@ Escolha o robô que será utilizado e conecte-se a ele a partir do seu terminal.
 ### **Passo 2: Inicializar o Software Base do Robô (Executar na Jetson) em um terminal**
 
 Após conectar-se ao robô via SSH, você precisa iniciar os componentes essenciais: o container Docker do robô, o driver do LiDAR e o Odrive.
-
+#### **Terminal 1:
 1.  **Subir o container do robô:**
     * *Repositório de referência: [is-robis-ros2 (branch: devel)](https://github.com/labvisio/is-robis-ros2/tree/devel)*
     ```bash
@@ -60,7 +60,7 @@ Após conectar-se ao robô via SSH, você precisa iniciar os componentes essenci
 
 Esta etapa é executada na sua própria máquina (não no robô) e requer três terminais separados para gerenciar os diferentes componentes do sistema de navegação.
 
-#### **Terminal 1: Container com RViz e Nav2**
+#### **Terminal 2: Container com RViz e Nav2**
 
 1.  **Clone o repositório (se ainda não o tiver):**
     ```bash
@@ -85,7 +85,7 @@ Esta etapa é executada na sua própria máquina (não no robô) e requer três 
     ros2 launch nav2_bringup localization_launch.py map:=/opt/ros/humble/share/nav2_bringup/maps/mapa_labsea.yaml
     ```
 
-#### **Terminal 2: Re-inicialização e RViz**
+#### **Terminal 3: Re-inicialização e RViz**
 
 1.  **Acesse o container `ros-utilities` em execução:**
     ```bash
@@ -104,7 +104,7 @@ Esta etapa é executada na sua própria máquina (não no robô) e requer três 
     rviz2
     ```
 
-#### **Terminal 3: Iniciar Navegação**
+#### **Terminal 4: Iniciar Navegação**
 
 1.  **Acesse o container `ros-utilities` novamente:**
     ```bash
@@ -124,7 +124,7 @@ Esta etapa é executada na sua própria máquina (não no robô) e requer três 
 ### **Passo 4: Inicializar o Gateway IS-ROS2 (Na sua Máquina Local)**
 
 Em um novo terminal na sua máquina, inicie o gateway que faz a ponte de comunicação.
-
+Terminal 5:
 1.  **Subir o container do gateway:**
     ```bash
     sudo docker run --rm -it --network=host matheusdutra0207/is-ros2-gateway:0.0.1 bash
@@ -141,7 +141,7 @@ Em um novo terminal na sua máquina, inicie o gateway que faz a ponte de comunic
 ---
 
 ### **Passo 5: Ativar o Node Dynamic Follower (Máquina Específica)**
-
+Terminal 6:
 Este passo **deve ser executado na máquina `10.10.2.92`**.
 
 1.  **Conecte-se à máquina via SSH:**
@@ -169,7 +169,7 @@ Este passo **deve ser executado na máquina `10.10.2.92`**.
 ### **Passo 6: Rodar o Cliente Click-to-Go (Máquina de Brasília)**
 
 Este é o passo final, onde você executa a interface que captura os cliques para mover o robô.
-
+Terminal 7:
 1.  **Navegue até o diretório do projeto:**
     ```bash
     cd click-to-move

@@ -35,7 +35,7 @@ Escolha o robô que será utilizado e conecte-se a ele a partir do seu terminal.
 
 ---
 
-### **Passo 2: Inicializar o Software Base do Robô (Executar na Jetson)**
+### **Passo 2: Inicializar o Software Base do Robô (Executar na Jetson) em um terminal**
 
 Após conectar-se ao robô via SSH, você precisa iniciar os componentes essenciais: o container Docker do robô, o driver do LiDAR e o Odrive.
 

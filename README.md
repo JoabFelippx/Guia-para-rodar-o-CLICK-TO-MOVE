@@ -232,10 +232,10 @@ Este é o passo final, onde você executa a interface que captura os cliques par
 > Observação: na fonte do carregador, um **LED vermelho** indica que o robô está carregando (**o robô precisa estar ligado**).  
 > Quando a carga estiver completa, o LED mudará para **verde**.  
 > Recomendo deixar o robô conectado por mais algum tempo mesmo após o LED ficar verde.  
-
-<img src="IMAGES/carregador-entrada.png" alt="Entrada do carregador" width="500"/>
-<img src="IMAGES/carregadores.jpg" alt="Entrada do carregador" width="280"/>
-
+<p align="center">
+    <img src="IMAGES/carregador-entrada.png" alt="Entrada do carregador" width="500"/>
+    <img src="IMAGES/carregadores.jpg" alt="Entrada do carregador" width="280"/>
+</p>
 ## ArUco
 
 Para que as câmeras do laboratório consigam localizar o robô, é necessário colocar o **marcador ArUco** em cima dele, na posição correta.  
@@ -244,8 +244,12 @@ O robô utiliza o **ArUco de ID 5**.
 Na parte de trás do marcador, há uma indicação de qual lado é a frente: esse lado deve estar voltado para a **frente do robô**.  
 
 ### Identificação do marcador
-<img src="IMAGES/aruco.jpg" alt="Marcador ArUco ID 5" width="280"/>
-<img src="IMAGES/lado-aruco.jpg" alt="Indicação da frente do ArUco" width="500"/>
+<p align="center">
+  <img src="IMAGES/aruco.jpg" alt="Marcador ArUco" width="280"/>
+  <img src="IMAGES/lado-aruco.jpg" alt="Frente do ArUco" width="500"/>
+</p>
+
+
 
 ### Exemplo de posicionamento no robô
 <img src="IMAGES/robIS.jpg" alt="ArUco posicionado no robô" width="780"/>

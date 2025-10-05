@@ -237,6 +237,7 @@ Este é o passo final, onde você executa a interface que captura os cliques par
     <img src="IMAGES/carregador-entrada.png" alt="Entrada do carregador" width="500"/>
     <img src="IMAGES/carregadores.jpg" alt="Entrada do carregador" width="280"/>
 </p>
+
 ## ArUco
 
 Para que as câmeras do laboratório consigam localizar o robô, é necessário colocar o **marcador ArUco** em cima dele, na posição correta.  

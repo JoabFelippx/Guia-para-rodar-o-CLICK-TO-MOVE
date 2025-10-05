@@ -58,8 +58,9 @@ Após conectar-se ao robô via SSH, você precisa iniciar os componentes essenci
 
 > Para confirmar que o comando foi executado com sucesso, observe o **LiDAR do robô**: ele deve começar a girar.  
 > Esse movimento indica que o sistema foi inicializado corretamente. 
-
-<img src="IMAGES\lidar.jpg" alt="Entrada do carregador" width="500"/>
+<p align="center">
+    <img src="IMAGES\lidar.jpg" alt="Entrada do carregador" width="500"/>
+</p>
 
 ### **Passo 3: Executar o Navigation2 (Na sua Máquina Local)**
 
@@ -201,9 +202,9 @@ Este é o passo final, onde você executa a interface que captura os cliques par
 ### Passo a passo 
 1. Localize um **botão azul**: este é o botão de energização.  
 2. Pressione o botão azul para ligar o robô.  
-
-<img src="IMAGES/botao-ligar-robo.png" alt="Entrada do carregador" width="500"/>
-
+<p align="center">
+    <img src="IMAGES/botao-ligar-robo.png" alt="Entrada do carregador" width="500"/>
+</p>
 ## Como ligar a jetson
 
 ### Passo a passo
@@ -214,9 +215,9 @@ Este é o passo final, onde você executa a interface que captura os cliques par
 > Observação: após pressionar o botão, a Jetson (localizada dentro do robô) acenderá um **led verde**. 
 
 > Aguarde alguns instantes até que o sistema conclua o boot antes de realizar o acesso via **SSH**.
-
-<img src="IMAGES/botao-ligar-jetson.png" alt="Entrada do carregador" width="500"/>
-
+<p align="center">
+    <img src="IMAGES/botao-ligar-jetson.png" alt="Entrada do carregador" width="500"/>
+</p>
 
 ## Como colocar o robô para carregar
 
@@ -252,7 +253,9 @@ Na parte de trás do marcador, há uma indicação de qual lado é a frente: ess
 
 
 ### Exemplo de posicionamento no robô
-<img src="IMAGES/robIS.jpg" alt="ArUco posicionado no robô" width="780"/>
+<p align="center">
+    <img src="IMAGES/robIS.jpg" alt="ArUco posicionado no robô" width="780" />
+</p>
 
 
 

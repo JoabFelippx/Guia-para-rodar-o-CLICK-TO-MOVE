@@ -2,9 +2,11 @@
 
 ### **Visão Geral**
 
-Este documento detalha o processo para executar a aplicação **click-to-move** nos robôs **RobIS**. O sistema é baseado em uma placa **Jetson Nano** e a interação é feita via **SSH**. Durante a demonstração, dois robôs (D2 e D2X) serão utilizados em alternância.
+Este documento detalha o processo para executar a aplicação **click-to-move** nos robôs **RobIS**. O sistema é baseado em uma placa **Jetson Nano** e a interação é feita via **SSH**. Durante a demonstração, dois robôs (D2 e D2X) serão utilizados em alternância. Você usará múltiplos terminais pelo menos 6.
 
-Para facilitar o acesso durante a apresentação, foi criado um usuário no laboratório com as seguintes credenciais:
+
+# Para facilitar o acesso durante a apresentação, todo o material será executado diretamente no computador do lado da TV. Além disso, foi criado um usuário específico no laboratório com as seguintes credenciais (USAR ESSE USUÁRIO):
+
 * **Usuário:** `brasilia`
 * **Senha:** `brasilia`
 
@@ -54,7 +56,10 @@ Após conectar-se ao robô via SSH, você precisa iniciar os componentes essenci
     ros2 launch odrive_ros2_pkg is_robis_ros2_launch.py publish_odom_tf:=true
     ```
 
----
+> Para confirmar que o comando foi executado com sucesso, observe o **LiDAR do robô**: ele deve começar a girar.  
+> Esse movimento indica que o sistema foi inicializado corretamente. 
+
+<img src="IMAGES\lidar.jpg" alt="Entrada do carregador" width="500"/>
 
 ### **Passo 3: Executar o Navigation2 (Na sua Máquina Local)**
 
@@ -64,10 +69,10 @@ Esta etapa é executada na sua própria máquina (não no robô) e requer três 
 
 1.  **Clone o repositório (se ainda não o tiver):**
     ```bash
-    git clone https://github.com/labvisio/navigation2.git
+    git clone https://github.com/labvisio/navigation2.git # PARA APRESENTAÇÃO EM BRASILIA NÃO VAI PRECISAR EXECUTAR ESSE COMANDO
     cd navigation2
     ```
-2.  **Verifique o usuário:** No arquivo `nav2-rviz2-container.sh`, garanta que a variável `USER` está configurada com o nome de usuário da sua máquina.
+2.  **Verifique o usuário:** No arquivo `nav2-rviz2-container.sh`, garanta que a variável `USER` está configurada com o nome de usuário da sua máquina. (PARA APRESENTAÇÃO EM BRASILIA O `USER` JÁ FOI ALTERADO)
 3.  **Permita a conexão gráfica:**
     ```bash
     xhost +
@@ -125,7 +130,7 @@ Esta etapa é executada na sua própria máquina (não no robô) e requer três 
 ### **Passo 4: Inicializar o Gateway IS-ROS2 (Na sua Máquina Local)**
 
 Em um novo terminal na sua máquina, inicie o gateway que faz a ponte de comunicação.
-#### **Terminal 5:
+#### **Terminal 5:**
 1.  **Subir o container do gateway:**
     ```bash
     sudo docker run --rm -it --network=host matheusdutra0207/is-ros2-gateway:0.0.1 bash
@@ -144,7 +149,7 @@ Em um novo terminal na sua máquina, inicie o gateway que faz a ponte de comunic
 ### **Passo 5: Ativar o Node Dynamic Follower (Máquina Específica)**
 
 Este passo **deve ser executado na máquina `10.10.2.92`**.
-#### **Terminal 6:
+#### **Terminal 6:**
 1.  **Conecte-se à máquina via SSH:**
     * **Usuário:** `ros`
     * **Senha:** `ros123456`
@@ -170,7 +175,7 @@ Este passo **deve ser executado na máquina `10.10.2.92`**.
 ### **Passo 6: Rodar o Cliente Click-to-Move (Máquina de Brasília)**
 
 Este é o passo final, onde você executa a interface que captura os cliques para mover o robô.
-#### **Terminal 7:
+#### **Terminal 7:**
 1.  **Navegue até o diretório do projeto:**
     ```bash
     cd click-to-move
@@ -186,6 +191,66 @@ Este é o passo final, onde você executa a interface que captura os cliques par
     ```
 
 ---
+
+# INFORMAÇÕES BÁSICAS
+
+## Como ligar o robô
+
+> Observação: os dois robôs são parecidos, então este procedimento serve para ambos.
+
+### Passo a passo 
+1. Localize um **botão azul**: este é o botão de energização.  
+2. Pressione o botão azul para ligar o robô.  
+
+<img src="IMAGES/botao-ligar-robo.png" alt="Entrada do carregador" width="500"/>
+
+## Como ligar a jetson
+
+### Passo a passo
+1. Localize o **módulo wifi** no painel do robô.  
+2. Abaixo dele, há um **botão cinza**: este é o botão para ligar a jetson.  
+3. Pressione o botão cinza para ligar a jetson.  
+
+> Observação: após pressionar o botão, a Jetson (localizada dentro do robô) acenderá um **led verde**. 
+
+> Aguarde alguns instantes até que o sistema conclua o boot antes de realizar o acesso via **SSH**.
+
+<img src="IMAGES/botao-ligar-jetson.png" alt="Entrada do carregador" width="500"/>
+
+
+## Como colocar o robô para carregar
+
+> Observação: para o robô funcionar corretamente, ele precisa estar **bem carregado**.  
+> Caso contrário, pode apresentar mau funcionamento — por exemplo, perder-se durante a navegação ou inverter os eixos **X/Y** da odometria.  
+> Portanto, é fundamental manter os robôs sempre carregados.
+
+### Passo a passo
+1. Localize o **botão azul** de energização do robô.  
+2. À esquerda do botão azul, há uma **entrada com 3 pinos**: esta é a entrada do carregador.  
+3. Conecte o carregador nessa entrada.  
+
+> Observação: na fonte do carregador, um **LED vermelho** indica que o robô está carregando (**o robô precisa estar ligado**).  
+> Quando a carga estiver completa, o LED mudará para **verde**.  
+> Recomendo deixar o robô conectado por mais algum tempo mesmo após o LED ficar verde.  
+
+<img src="IMAGES/carregador-entrada.png" alt="Entrada do carregador" width="500"/>
+<img src="IMAGES/carregadores.jpg" alt="Entrada do carregador" width="280"/>
+
+## ArUco
+
+Para que as câmeras do laboratório consigam localizar o robô, é necessário colocar o **marcador ArUco** em cima dele, na posição correta.  
+
+O robô utiliza o **ArUco de ID 5**.  
+Na parte de trás do marcador, há uma indicação de qual lado é a frente: esse lado deve estar voltado para a **frente do robô**.  
+
+### Identificação do marcador
+<img src="IMAGES/aruco.jpg" alt="Marcador ArUco ID 5" width="280"/>
+<img src="IMAGES/lado-aruco.jpg" alt="Indicação da frente do ArUco" width="500"/>
+
+### Exemplo de posicionamento no robô
+<img src="IMAGES/robIS.jpg" alt="ArUco posicionado no robô" width="780"/>
+
+
 
 ### **Repositórios de Referência**
 

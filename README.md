@@ -195,9 +195,11 @@ Este é o passo final, onde você executa a interface que captura os cliques par
 
 # INFORMAÇÕES BÁSICAS
 
-## Como ligar o robô
 
 > Observação: os dois robôs são parecidos, então este procedimento serve para ambos.
+
+
+## Como ligar o robô
 
 ### Passo a passo 
 1. Localize um **botão azul**: este é o botão de energização.  
@@ -205,6 +207,7 @@ Este é o passo final, onde você executa a interface que captura os cliques par
 <p align="center">
     <img src="IMAGES/botao-ligar-robo.png" alt="Entrada do carregador" width="500"/>
 </p>
+
 ## Como ligar a jetson
 
 ### Passo a passo
